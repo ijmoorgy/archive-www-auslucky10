@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>九游娱乐 · 产品说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f5f7;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e222b;
+      line-height: 1.6;
+      padding: 2rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    /* 卡片风格 */
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      border: 1px solid #e6e9ef;
+      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+      padding: 2rem 2rem 2.2rem;
+      margin-bottom: 1.8rem;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
+    }
+
+    /* hero区窄卡 */
+    .hero-card {
+      background: #ffffff;
+      border-radius: 24px;
+      border: 1px solid #e6e9ef;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.02);
+      padding: 2.4rem 2.2rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 520;
+      letter-spacing: -0.01em;
+      color: #1a1f2b;
+      margin-bottom: 0.6rem;
+    }
+
+    .subhead {
+      font-size: 1.1rem;
+      color: #4d5466;
+      font-weight: 400;
+      line-height: 1.5;
+      max-width: 85%;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #1a1f2b;
+      border-left: 4px solid #98a2b8;
+      padding-left: 1rem;
+      margin-bottom: 1.4rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #202533;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      color: #2c3240;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0.6rem 0;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 1.6rem;
+      margin-bottom: 0.7rem;
+      color: #2c3240;
+    }
+
+    ul li::before {
+      content: "·";
+      font-weight: 700;
+      position: absolute;
+      left: 0.3rem;
+      color: #76809b;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.4rem;
+    }
+
+    .feature-item {
+      background: #f8f9fc;
+      border-radius: 16px;
+      padding: 1.2rem 1.4rem;
+      border: 1px solid #eaecf0;
+    }
+
+    .feature-item p {
+      margin-bottom: 0.3rem;
+      font-size: 0.95rem;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: #eaeef5;
+      color: #3f485b;
+      padding: 0.15rem 0.9rem;
+      border-radius: 30px;
+      letter-spacing: 0.02em;
+      border: 1px solid #dce0e8;
+      margin-right: 0.3rem;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      border: 1px solid #cbd0db;
+      color: #1e222b;
+      padding: 0.5rem 1.6rem;
+      border-radius: 60px;
+      font-size: 0.95rem;
+      font-weight: 460;
+      transition: all 0.2s;
+      text-decoration: none;
+      margin-top: 0.2rem;
+    }
+
+    .btn-outline:hover {
+      background: #ffffff;
+      border-color: #76809b;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .inline-link {
+      color: #1f2937;
+      text-decoration: none;
+      border-bottom: 1px solid #a5b1c7;
+      padding-bottom: 0.03rem;
+      font-weight: 470;
+      transition: border-color 0.15s;
+    }
+
+    .inline-link:hover {
+      border-bottom: 1px solid #1f2937;
+    }
+
+    .faq-item {
+      padding: 1rem 0;
+      border-bottom: 1px solid #eaecf0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 490;
+      color: #1a1f2b;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-a {
+      color: #3d4559;
+      font-size: 0.95rem;
+    }
+
+    .note {
+      background: #f0f2f6;
+      border-radius: 14px;
+      padding: 1rem 1.6rem;
+      font-size: 0.92rem;
+      color: #3b4358;
+      border: 1px solid #e1e4ec;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e2e5ed;
+      margin: 1rem 0 0.8rem 0;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0 0.5rem;
+      font-size: 0.9rem;
+      color: #5b647b;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1.2rem 1rem;
+      }
+
+      .card, .hero-card {
+        padding: 1.6rem 1.2rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .subhead {
+        max-width: 100%;
+        font-size: 1rem;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero 摘要 -->
+  <div class="hero-card">
+    <h1>再访 · 持续关注</h1>
+    <div class="subhead">
+      对 <a href="https://webportal-jiuyou.com" class="inline-link">九游娱乐</a> 而言，一次访问也许是偶然；而收藏与回访，才逐渐理解它的内容结构与服务节奏。这是一个偏向信息组织与内容聚合的站点，适合对休闲资讯和轻度互动有需求的用户。
+    </div>
+    <div style="margin-top: 1.6rem;">
+      <span class="tag">内容聚合</span>
+      <span class="tag">轻资讯</span>
+      <span class="tag">休闲方向</span>
+    </div>
+  </div>
+
+  <!-- 亮点卡片 -->
+  <div class="card">
+    <h2>产品亮点 · 结构倾向</h2>
+    <div class="grid-2">
+      <div class="feature-item">
+        <h3>板块清晰</h3>
+        <p>页面分区明确，资讯与功能入口彼此独立，降低重复浏览时的认知成本。</p>
+      </div>
+      <div class="feature-item">
+        <h3>内容更新节奏</h3>
+        <p>信息流保持一定更新频次，适合隔周或月度回访，不会产生严重滞后感。</p>
+      </div>
+      <div class="feature-item">
+        <h3>操作收敛</h3>
+        <p>交互方式克制，没有过度推送或频繁弹层，浏览体验相对安静。</p>
+      </div>
+      <div class="feature-item">
+        <h3>视觉一致性</h3>
+        <p>配色与卡片风格统一，长期使用中不会产生视觉疲劳感。</p>
+      </div>
+    </div>
+    <hr>
+    <p style="font-size: 0.98rem;">以上亮点基于持续使用中的观察总结，功能细节可能随站点迭代调整。</p>
+  </div>
+
+  <!-- 使用建议 + 场景 -->
+  <div class="card">
+    <h2>使用建议 · 场景参考</h2>
+    <p>如果你选择将 <a href="https://webportal-jiuyou.com" class="inline-link">九游娱乐</a> 加入收藏夹或固定标签页，以下角度或许有助于提升使用效率：</p>
+    <ul>
+      <li><strong>周期性查看</strong> — 建议每 7–14 天访问一次，此时内容积累量适中，不会产生信息过载。</li>
+      <li><strong>关注特定栏目</strong> — 部分板块更新较稳定，可只关注自己感兴趣的栏目，而非通读全部内容。</li>
+      <li><strong>配合标签管理</strong> — 如果使用书签分组，可将该站点归入“休闲 · 资讯”类，与其他工具型站点分开。</li>
+    </ul>
+    <div class="note">
+      <strong>场景示例：</strong> 午休间隙、周末浏览、或作为阅读列表中的调剂页面，均能自然融入日常信息接收习惯。
+    </div>
+  </div>
+
+  <!-- FAQ摘要 -->
+  <div class="card">
+    <h2>常见问题 · 摘要</h2>
+    <div class="faq-item">
+      <div class="faq-q">站点内容是否会频繁变动？</div>
+      <div class="faq-a">内容更新存在一定周期，但不会天翻地覆式改版；主要栏目结构相对稳定，适合回头客。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">是否需要注册或登录？</div>
+      <div class="faq-a">当前浏览状态下大部分内容可直接阅读；部分互动功能可能有账号要求，具体见站内说明。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">如何最快找到上次看到的位置？</div>
+      <div class="faq-a">建议使用浏览器自带书签或历史记录，站点本身未提供浏览进度追踪功能。</div>
+    </div>
+    <div style="margin-top: 0.6rem;">
+      <a href="https://webportal-jiuyou.com" class="btn-outline">九游娱乐</a>
+    </div>
+  </div>
+
+  <!-- 可信但克制的访问说明 -->
+  <div class="card" style="border-left: 4px solid #bcc3d4;">
+    <h2>关于访问 · 说明</h2>
+    <p><a href="https://webportal-jiuyou.com" class="inline-link">九游娱乐</a> 是一个面向休闲资讯与内容浏览的网页入口。其内容方向偏向娱乐资讯与轻度互动，不涉及金融、医疗、政策等敏感领域。所有信息均以页面呈现为准，访问者应基于自身判断来使用。</p>
+    <p>本页仅作为产品层面的客观说明，不构成对站点内容或运营的背书。建议用户在收藏与回访过程中，留意站点自身的条款与内容更新。</p>
+    <div class="note" style="margin-top: 0.8rem; background: #f4f5f7;">
+      ⚐ 如果你第一次接触该站点，可以先浏览首页结构，再决定是否长期关注。
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footer-links">
+    <span>站点参考：<a href="https://webportal-jiuyou.com" class="inline-link">九游娱乐</a></span>
+    <span style="color: #7c859c;">产品说明 · 持续关注视角</span>
+  </div>
+
+</div>
+</body>
+</html>
