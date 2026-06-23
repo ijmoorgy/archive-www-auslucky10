@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>九游娱乐 · 信息索引与使用导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fcfbf9;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', sans-serif;
+            color: #1e1e1e;
+            line-height: 1.7;
+            padding: 2rem 1.25rem 4rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 720px;
+            width: 100%;
+        }
+
+        /* 极简标题层级 */
+        h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            color: #111;
+            border-left: 4px solid #2d7a9b;
+            padding-left: 1rem;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 2.2rem;
+            border-bottom: 1px solid #e2dfda;
+            padding-bottom: 0.75rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 450;
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            color: #1e3a47;
+            border-bottom: 1px dashed #d0ccc6;
+            padding-bottom: 0.3rem;
+        }
+
+        h3 {
+            font-size: 1.08rem;
+            font-weight: 500;
+            margin-top: 1.6rem;
+            margin-bottom: 0.4rem;
+            color: #2a4a5c;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.01rem;
+        }
+
+        a {
+            color: #1f6c8a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.15s ease;
+            word-break: break-word;
+        }
+
+        a:hover {
+            color: #0b3d50;
+            text-decoration-thickness: 2px;
+        }
+
+        .intro-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 1.25rem 1.5rem;
+            flex: 1 1 180px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02), 0 1px 4px rgba(0, 0, 0, 0.03);
+            border: 1px solid #edebe7;
+            transition: border-color 0.2s;
+        }
+
+        .card:hover {
+            border-color: #b8d0db;
+        }
+
+        .card h4 {
+            font-size: 1.1rem;
+            font-weight: 450;
+            margin-bottom: 0.5rem;
+            color: #2b5e76;
+        }
+
+        .card p {
+            font-size: 0.93rem;
+            color: #3f3f3f;
+            margin-bottom: 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 1.5rem;
+            margin: 1.8rem 0 1rem;
+        }
+
+        .info-item {
+            border-left: 3px solid #d5d9d3;
+            padding-left: 1rem;
+        }
+
+        .info-item strong {
+            display: block;
+            font-weight: 500;
+            color: #1a3e4c;
+            font-size: 0.95rem;
+        }
+
+        .info-item span {
+            font-size: 0.9rem;
+            color: #4f4f4f;
+        }
+
+        .notice-box {
+            background: #f5f2ed;
+            border-radius: 16px;
+            padding: 1.3rem 1.6rem;
+            margin: 2.5rem 0 1.2rem;
+            border-left: 5px solid #2d7a9b;
+        }
+
+        .notice-box p {
+            margin-bottom: 0.3rem;
+            font-size: 0.98rem;
+        }
+
+        .faq-mini {
+            margin-top: 2.2rem;
+            padding-top: 0.3rem;
+            border-top: 1px solid #e3dfd8;
+        }
+
+        .faq-mini dt {
+            font-weight: 480;
+            margin-top: 1rem;
+            color: #1b4353;
+            font-size: 1rem;
+        }
+
+        .faq-mini dd {
+            margin-left: 0;
+            margin-bottom: 0.8rem;
+            color: #404040;
+            font-size: 0.95rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e2ddd6;
+            margin: 2.2rem 0 1.5rem;
+        }
+
+        .footer-note {
+            font-size: 0.88rem;
+            color: #73706a;
+            margin-top: 2.5rem;
+            text-align: left;
+        }
+
+        @media (max-width: 520px) {
+            body {
+                padding: 1.5rem 1rem 3rem;
+            }
+            h1 {
+                font-size: 1.7rem;
+                padding-left: 0.8rem;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+            .intro-cards {
+                flex-direction: column;
+            }
+            .card {
+                flex: 1 1 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>九游娱乐 · 知识库入口</h1>
+    <div class="subhead">用途速览 · 功能说明 · 相关信息</div>
+
+    <p>
+        当你第一次接触一个平台，最直接的需求往往是：它提供什么？如何快速了解全貌？
+        <a href="https://webwap-jiuyou.com">九游娱乐</a> 作为综合类数字互动站点，涵盖游戏资讯、活动聚合以及社区交流等模块。下面以目录式结构梳理其主要知识板块，帮助你快速定位所需内容。
+    </p>
+
+    <!-- 卡片区：核心特点 -->
+    <div class="intro-cards">
+        <div class="card">
+            <h4>🎮 游戏动态</h4>
+            <p>新游发布、版本更新、热门排行，聚合多平台游戏情报。</p>
+        </div>
+        <div class="card">
+            <h4>📌 活动中心</h4>
+            <p>限时任务、签到福利、赛事预告，一站式了解当前进行中的活动。</p>
+        </div>
+        <div class="card">
+            <h4>💬 社区参考</h4>
+            <p>玩家讨论、攻略分享、反馈通道，辅助你更快融入圈子。</p>
+        </div>
+    </div>
+
+    <h2>▸ 信息分区说明</h2>
+    <p>为了方便浏览，平台将内容按照使用场景做了归类。你可以参照以下分区快速查找：</p>
+
+    <div class="info-grid">
+        <div class="info-item">
+            <strong>指南与入门</strong>
+            <span>账号关联、基础设置、常见功能路径，适合初次使用。</span>
+        </div>
+        <div class="info-item">
+            <strong>游戏目录</strong>
+            <span>按类型/人气排列的游戏列表，附带简要介绍与标签。</span>
+        </div>
+        <div class="info-item">
+            <strong>资讯专栏</strong>
+            <span>官方公告、行业观察、版本解析，内容偏信息向。</span>
+        </div>
+        <div class="info-item">
+            <strong>帮助与反馈</strong>
+            <span>自助查询、联系渠道与问题提交入口。</span>
+        </div>
+    </div>
+
+    <h2>▸ 使用提示</h2>
+    <div class="notice-box">
+        <p><strong>• 优先阅读“指南与入门”</strong> — 如果你对页面结构或功能位置不熟悉，建议先浏览该区域，能减少后续查找时间。</p>
+        <p><strong>• 活动时效性</strong> — 活动中心内标注了截止日期，参与前确认剩余时间，避免错过奖励。</p>
+        <p><strong>• 信息源核实</strong> — 社区内容由用户生成，参与讨论时可参考官方公告进一步确认。</p>
+    </div>
+
+    <h2>▸ 相关信息摘要</h2>
+    <p>以下补充一些常见问题与背景知识，辅助你对平台建立整体认知：</p>
+
+    <dl class="faq-mini">
+        <dt>九游娱乐主要面向哪些用户？</dt>
+        <dd>覆盖轻度至中度游戏爱好者，以及喜欢浏览游戏资讯、参与线上活动的玩家。内容设计兼顾新手与有一定经验的用户。</dd>
+
+        <dt>是否需要注册才能浏览？</dt>
+        <dd>大部分资讯和游戏目录可以直接查看；部分互动功能（如评论、签到）可能需要注册账号。具体可参考站内指引。</dd>
+
+        <dt>内容更新频率如何？</dt>
+        <dd>游戏动态与活动板块保持日常更新，资讯专栏则根据热点不定期发布。建议关注首页推荐位或订阅相关栏目。</dd>
+
+        <dt>怎样快速找到某个游戏的专题？</dt>
+        <dd>可使用站点搜索功能（如有），或按分类筛选。部分热门游戏设有独立专区，在导航栏或游戏目录中可见。</dd>
+    </dl>
+
+    <hr>
+
+    <p>
+        如果你希望直接访问资源区，可前往 <a href="https://webwap-jiuyou.com">九游娱乐</a> 开始浏览。掌握上述分区与提示后，日常使用会更有条理。
+    </p>
+
+    <div class="footer-note">
+        —— 本页为介绍性知识索引，内容基于公开信息整理，仅供参考。平台功能以实际页面为准。
+    </div>
+</div>
+</body>
+</html>
